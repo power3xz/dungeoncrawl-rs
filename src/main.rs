@@ -5,6 +5,7 @@ mod map_builder;
 mod player;
 mod spawner;
 mod systems;
+
 mod prelude {
     pub use bracket_lib::prelude::*;
     pub use legion::systems::CommandBuffer;
@@ -56,7 +57,7 @@ impl GameState for State {
         ctx.cls();
         self.resources.insert(ctx.key);
         self.systems.execute(&mut self.ecs, &mut self.resources);
-        // TODO: Render Draw Buffer
+        render_draw_buffer(ctx).expect("Render error");
     }
 }
 fn main() -> BError {
