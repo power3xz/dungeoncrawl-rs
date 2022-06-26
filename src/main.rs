@@ -3,6 +3,7 @@ mod components;
 mod map;
 mod map_builder;
 mod player;
+mod spawner;
 mod prelude {
     pub use bracket_lib::prelude::*;
     pub use legion::systems::CommandBuffer;
@@ -17,6 +18,7 @@ mod prelude {
     pub use crate::map::*;
     pub use crate::map_builder::*;
     pub use crate::player::*;
+    pub use crate::spawner::*;
 }
 
 use prelude::*;
